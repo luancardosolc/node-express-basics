@@ -12,6 +12,14 @@ const app = express();
 //   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 // });
 
+const logger = (req, res, next) => {
+  console.log('logger');
+  next();
+}
+
+// Init middleware
+app.use(logger);
+
 // Gets all members
 app.get('/api/member', (req, res) => {
   res.json(members);

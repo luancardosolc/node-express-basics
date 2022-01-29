@@ -1,0 +1,29 @@
+{
+	"info": {
+		"_postman_id": "7c5f26ac-0294-4bab-b5c1-7c796f9a5939",
+		"name": "Node Express Basics",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all members",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/member",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"member"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
