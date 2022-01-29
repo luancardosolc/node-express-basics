@@ -47,9 +47,9 @@ router.put("/:id", (req, res) => {
 
 	if (member) {
     const updMember = req.body;
-    member.email = updMember.email;
-    member.name = updMember.name;
-    member.status = updMember.status;
+    member.email = updMember.email ? updMember.email : member.email;
+    member.name = updMember.name ? updMember.name : member.name;
+    member.status = updMember.status ? updMember.status : member.status;
     members[indexOfMember] = member;
 		res.json(member);
 	} else {
