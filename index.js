@@ -13,7 +13,7 @@ const app = express();
 // });
 
 const logger = (req, res, next) => {
-  console.log('logger');
+  console.log('logger middleware', `${req.protocol}://${req.get('host')}${req.originalUrl}`);
   next();
 }
 
