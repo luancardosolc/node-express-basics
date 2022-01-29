@@ -21,6 +21,7 @@
   "homepage": "https://github.com/luancardosolc/node-express-basics#readme",
   "dependencies": {
     "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
     "moment": "^2.29.1"
   },
   "devDependencies": {
