@@ -24,7 +24,6 @@ router.post("/", (req, res) => {
 	const memberWithHighestId = members.reduce((prev, current) => {
 		return prev.id > current.y ? prev : current;
 	});
-	console.log("highestId", memberWithHighestId.id);
 
 	const newMember = {
 		id: memberWithHighestId.id + 1,
@@ -39,6 +38,25 @@ router.post("/", (req, res) => {
 
 	members.push(newMember);
 	res.json(newMember);
+});
+
+// Update Member
+router.put("/:id", (req, res) => {
+	const member = members.find((m) => m.id === parseInt(req.params.id));
+  const indexOfMember = members.findIndex(m => m.id === member.id);
+
+	if (member) {
+    const updMember = req.body;
+    member.email = updMember.email;
+    member.name = updMember.name;
+    member.status = updMember.status;
+    members[indexOfMember] = member;
+		res.json(member);
+	} else {
+		res.status(400).json({
+			msg: `No member with the id of ${req.params.id}`,
+		});
+	}
 });
 
 module.exports = router;
