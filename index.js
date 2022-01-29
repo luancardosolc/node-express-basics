@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
-const moment = require("moment");
 const members = require("./Members");
+const logger = require("./middleware/logger");
 
 const app = express();
 
@@ -12,16 +12,6 @@ const app = express();
 // app.get('/sendFile', (req, res) => {
 //   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 // });
-
-const logger = (req, res, next) => {
-	console.log(
-		"logger middleware",
-		`${req.protocol}://${req.get("host")}${
-			req.originalUrl
-		}: ${moment().format()}`
-	);
-	next();
-};
 
 // Init middleware
 app.use(logger);
