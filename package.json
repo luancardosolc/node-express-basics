@@ -19,5 +19,8 @@
   "homepage": "https://github.com/luancardosolc/node-express-basics#readme",
   "dependencies": {
     "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
