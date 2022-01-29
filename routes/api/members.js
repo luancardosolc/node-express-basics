@@ -59,4 +59,20 @@ router.put("/:id", (req, res) => {
 	}
 });
 
+// Update Member
+router.delete("/:id", (req, res) => {
+  const indexOfMember = members.findIndex(m => m.id === parseInt(req.params.id));
+  console.log('indexOfMember', indexOfMember);
+  console.log('req.params.id', req.params.id);
+
+	if (indexOfMember != -1) {
+    members.splice(indexOfMember, 1);
+		res.json(members);
+	} else {
+		res.status(400).json({
+			msg: `No member with the id of ${req.params.id}`,
+		});
+	}
+});
+
 module.exports = router;
