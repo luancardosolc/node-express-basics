@@ -14,11 +14,17 @@ const app = express();
 // });
 
 // Init middleware
-app.use(logger);
+// app.use(logger);
 
-// Gets all members
+// Gets all Members
 app.get("/api/member", (req, res) => {
 	res.json(members);
+});
+
+// Gets Single Member
+app.get("/api/member/:id", (req, res) => {
+  const member = members.find((m) => m.id === parseInt(req.params.id));
+	res.json(member);
 });
 
 // Set static folder
