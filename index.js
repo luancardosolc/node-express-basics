@@ -24,7 +24,11 @@ app.get("/api/member", (req, res) => {
 // Gets Single Member
 app.get("/api/member/:id", (req, res) => {
   const member = members.find((m) => m.id === parseInt(req.params.id));
-	res.json(member);
+  if (member) {
+    res.json(member);
+  } else {
+    res.status(400).json({ msg: `No member with the id of ${req.params.id}`});
+  }
 });
 
 // Set static folder
