@@ -37,7 +37,10 @@ router.post("/", (req, res) => {
 	}
 
 	members.push(newMember);
-	res.json(newMember);
+	// res.json(newMember);
+  
+  // Quick fix to redirect to the home page
+  res.redirect('/');
 });
 
 // Update Member
